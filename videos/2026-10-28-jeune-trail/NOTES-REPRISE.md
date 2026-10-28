@@ -3,8 +3,7 @@
 Angle proposé : les études ne montrent pas que courir à jeun rende plus endurant, mais bien
 placé, ça a quand même sa place dans ta semaine. Le jeûne intermittent peut t'affûter sans dégrader tes indices d'endurance.
 
-STYLE.md n'est pas encore rempli : notes écrites en tutoiement, sans tiret cadratin. À relire
-quand STYLE.md sera rempli.
+Relu contre STYLE.md (tutoiement, ton drôle, aucune marque, aucun chiffre sans source).
 
 ## Accroche, 3 versions
 
@@ -28,20 +27,23 @@ quand STYLE.md sera rempli.
 
 ## Le script, avec les effets à l'écran
 
+Le texte est le tien, mot pour mot. Les effets ont été retravaillés pour le ton de STYLE.md
+(drôle, l'humour porte l'idée) et pour coller à tes mots (« vidange », « est mieux », les barres).
+
 ```
-Courir à jeun pour être plus endurant en trail : j'ai regardé les études.      [« à jeun » qui tombe lettre par lettre]
-Le matin, après une nuit, ton foie a perdu environ 40 % de son sucre.          [une jauge « foie » qui descend à 60 %, le chiffre arrive]
-Tes muscles, eux, ne sont pas concernés par cette vidange.                                [jauge « muscles » qui reste inchangée]
-Donc à jeun, tu brûles plus de graisses, surtout à allure tranquille.           [surligne « graisses »]
-Et les « sucres lents » ? Le terme est même jugé faux par l'Afssa.              [« sucres lents » barré, « index glycémique » s'écrit à la main]
-Est-ce que ça te rend plus endurant ? Les études ne le montrent pas.           [point d'interrogation, puis cercle sur « pas »]
-Sur les sorties longues, c'est même l'inverse : manger avant est mieux.        [« 46 études » arrive, flèche vers « manger avant »]
-Le jeûne intermittent ? Environ 2 kg de moins en 8 semaines, sans changer tes indices d'endurance.  [« -2 kg » qui tombe, puis « = endurance »]
-Ma règle : footing court et tranquille à jeun, OK.                              [coche verte]
-Sortie longue ou intense : je mange avant.                                      [deuxième coche, une banane qui apparaît]
+Courir à jeun pour être plus endurant en trail : j'ai regardé les études.      [« à jeun » tombe lettre par lettre, une assiette vide se dessine à la main à côté]
+Le matin, après une nuit, ton foie a perdu environ 40 % de son sucre.          [jauge « foie » qui se vide jusqu'à 60 %, « -40 % » tombe dessus]
+Tes muscles, eux, ne sont pas concernés par cette vidange.                     [à côté, jauge « muscles » qui ne bouge pas, tampon « pas concerné » qui s'imprime de travers]
+Donc à jeun, tu brûles plus de graisses, surtout à allure tranquille.           [surligne « graisses », une petite flamme dessinée à la main au-dessus]
+Et les « sucres lents » ? Le terme est même jugé faux par l'Afssa.              [« sucres lents » barré à la main, tampon « FAUX » avec « Afssa, 2004 » en petit, puis « index glycémique » s'écrit à la main]
+Est-ce que ça te rend plus endurant ? Les études ne le montrent pas.           [gros point d'interrogation qui tombe, puis cercle sur « pas »]
+Sur les sorties longues, c'est même l'inverse : manger avant est mieux.        [balance dessinée : « à jeun » d'un côté, « manger avant » de l'autre, elle penche vers « manger avant » ; « 46 études » en petit dessous]
+Le jeûne intermittent ? Environ 2 kg de moins en 8 semaines, sans changer tes indices d'endurance.  [« -2 kg » tombe et fait rebondir la ligne, puis une jauge « endurance » qui reste au même niveau, signe « = »]
+Ma règle : footing court et tranquille à jeun, OK.                              [coche verte qui se dessine, « court + tranquille » à côté]
+Sortie longue ou intense : je mange avant.                                      [deuxième coche, une banane dessinée à la main]
+Je prends systématiquement une ou deux barres avec moi en sortie intermédiaire de 2 heures et j'y touche rarement.  [deux barres tombent dans un sac à dos, puis un compteur « barres mangées » qui hésite et s'arrête sur « rarement »]
 ```
 
-Je prends systématiquement une ou deux barres avec moi en sortie intermédiaire de 2 heures et j'y touche rarement
 ## Ce que la vidéo promet en caption
 
 « La règle en 2 lignes : quand courir à jeun, quand manger. » L'annoncer face caméra (dernière
