@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Trail à jeun : prompteur</title>
+<style>
+  :root {
+    --bg: #f6f3ec; --ink: #1c1b19; --muted: #6b665c; --rule: #ddd6c8;
+    --card: #fffdf8; --accent: #2f6fd6; --good: #1f8a4c; --bad: #c2412d; --tint: #e8effb;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #151514; --ink: #f0ede6; --muted: #a39d92; --rule: #33312d;
+      --card: #1e1d1b; --accent: #7aa7ff; --good: #5cc98a; --bad: #ff8a73; --tint: #1f2a3d;
+    }
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--ink);
+    font: 18px/1.55 -apple-system, "Segoe UI", Inter, Roboto, sans-serif; }
+  main { max-width: 820px; margin: 0 auto; padding: 32px 16px 80px; }
+  .kicker { text-transform: uppercase; letter-spacing: .12em; font-size: 13px; color: var(--muted); margin: 0 0 8px; }
+  h1 { font-size: clamp(30px, 6vw, 46px); line-height: 1.12; margin: 0 0 12px; letter-spacing: -.01em; }
+  h2 { font-size: 15px; text-transform: uppercase; letter-spacing: .1em; color: var(--muted);
+    margin: 48px 0 16px; padding-top: 16px; border-top: 1px solid var(--rule); }
+  .lead { font-size: 20px; color: var(--muted); margin: 0; }
+  .pov { display: grid; gap: 12px; }
+  .pov div { background: var(--card); border: 1px solid var(--rule); border-radius: 10px; padding: 14px 16px; }
+  .pov b { display: block; font-size: 13px; text-transform: uppercase; letter-spacing: .08em; color: var(--muted); margin-bottom: 4px; }
+  .arg { background: var(--card); border: 1px solid var(--rule); border-radius: 12px; padding: 18px 20px; margin-bottom: 16px; }
+  .say { font-size: clamp(22px, 4.2vw, 28px); line-height: 1.3; font-weight: 600; margin: 0 0 12px; }
+  .say .n { color: var(--accent); margin-right: 6px; }
+  .proof, .obj { margin: 6px 0 0; font-size: 16px; }
+  .proof::before { content: "Preuve  "; font-weight: 600; color: var(--good); }
+  .obj::before { content: "On te dira  "; font-weight: 600; color: var(--bad); }
+  .resp { margin: 4px 0 0; font-size: 16px; color: var(--muted); }
+  .resp::before { content: "Tu réponds  "; font-weight: 600; color: var(--ink); }
+  sup a { color: var(--accent); text-decoration: none; font-weight: 600; }
+  ol.script { list-style: none; counter-reset: l; padding: 0; margin: 0; }
+  ol.script li { counter-increment: l; font-size: clamp(24px, 4.6vw, 32px); line-height: 1.3; font-weight: 600;
+    padding: 14px 0; border-bottom: 1px solid var(--rule); }
+  ol.script li::before { content: counter(l); display: inline-block; width: 1.6em; color: var(--muted); font-weight: 400; }
+  ol.script .fx { display: block; font-size: 15px; font-weight: 400; color: var(--muted); margin-left: 1.6em; }
+  ul.no { padding-left: 20px; margin: 0; }
+  ul.no li { margin: 6px 0; }
+  ul.no li::marker { color: var(--bad); }
+  ol.src { padding-left: 24px; font-size: 15px; }
+  ol.src li { margin: 10px 0; }
+  ol.src a { color: var(--accent); }
+  ol.src span { color: var(--muted); }
+  .note { font-size: 14px; color: var(--muted); }
+</style>
+</head>
+<body>
+<main>
+  <p class="kicker">Prompteur · trail à jeun · recherche du 28 octobre 2026</p>
+  <h1>Les études ne montrent pas que courir à jeun rende plus endurant. Bien placé, ça a quand même sa place dans ta semaine.</h1>
+  <p class="lead">Le jeûne intermittent peut t'affûter sans changer tes indices d'endurance. Rien ne montre qu'il te fasse aller plus loin.</p>
+
+  <h2>Ton point de vue, challengé</h2>
+  <div class="pov">
+    <div><b>Ce que tu penses</b>Le jeûne intermittent et les sorties à jeun améliorent l'endurance d'un traileur, parce que le corps puise dans les sucres lents.</div>
+    <div><b>L'objection la plus forte</b>Manger avant les efforts longs donne de meilleures performances (46 études)<sup><a href="#s3">3</a></sup>, et des séances à jeun intégrées à l'entraînement n'ont pas fait mieux que manger avant chaque séance, chez des athlètes de haut niveau<sup><a href="#s9">9</a></sup>. Et à jeun, tu brûles surtout des graisses et le sucre stocké dans tes muscles, pas des « sucres lents »<sup><a href="#s1">1</a></sup>.</div>
+    <div><b>Ce qui tient quand même</b>À jeun, tu brûles vraiment plus de graisses pendant une sortie tranquille<sup><a href="#s1">1</a></sup>, ton corps envoie plus de signaux d'adaptation<sup><a href="#s4">4</a></sup>, et le jeûne intermittent aide à perdre un peu de poids sans changer les indices d'endurance<sup><a href="#s5">5</a></sup><sup><a href="#s7">7</a></sup>.</div>
+  </div>
+
+  <h2>Les arguments, dans l'ordre</h2>
+
+  <div class="arg">
+    <p class="say"><span class="n">1</span>Après une nuit, ton foie a perdu environ 40 % de son sucre. Tes muscles, non.</p>
+    <p class="proof">Une revue de 2020 : environ 40 % de glycogène du foie en moins après une nuit, le glycogène des muscles n'est pas touché<sup><a href="#s1">1</a></sup>.</p>
+    <p class="obj">« Alors à jeun, je vais tomber en hypo. »</p>
+    <p class="resp">Pas sur une sortie tranquille : ta glycémie reste normale, le corps fabrique du sucre et en consomme moins<sup><a href="#s1">1</a></sup>. Sur une sortie longue, c'est différent (argument 4).</p>
+  </div>
+
+  <div class="arg">
+    <p class="say"><span class="n">2</span>À jeun, tu brûles plus de graisses. Mais seulement pendant la sortie.</p>
+    <p class="proof">Plus de graisses brûlées à jeun à intensité modérée ; l'écart disparaît quand l'intensité monte. Et « peu de preuves » d'un gain durable après des semaines d'entraînement à jeun<sup><a href="#s1">1</a></sup>.</p>
+    <p class="obj">« Mon corps apprend à mieux brûler les graisses. »</p>
+    <p class="resp">Les marqueurs musculaires bougent dans environ 3 études sur 4, mais la performance ne s'améliore que dans 4 études sur 11<sup><a href="#s4">4</a></sup>.</p>
+  </div>
+
+  <div class="arg">
+    <p class="say"><span class="n">3</span>Les « sucres lents » ? Le terme lui-même est jugé faux.</p>
+    <p class="proof">L'Afssa, aujourd'hui l'ANSES : la classification « glucides lents / rapides » est « fausse ». Le pain ou les pommes de terre font monter le sucre dans le sang presque autant que du glucose. On parle d'index glycémique<sup><a href="#s2">2</a></sup>.</p>
+    <p class="obj">« Mon coach parle encore de sucres lents. »</p>
+    <p class="resp">C'est un raccourci pratique, mais il ne décrit ni ce que tu manges ni ce que tu brûles à jeun<sup><a href="#s2">2</a></sup>.</p>
+  </div>
+
+  <div class="arg">
+    <p class="say"><span class="n">4</span>Sur les sorties longues, manger avant fait mieux que partir à jeun.</p>
+    <p class="proof">Méta-analyse de 46 études : manger avant améliore l'effort aérobie long, aucune différence sur les efforts courts<sup><a href="#s3">3</a></sup>.</p>
+    <p class="obj">« Des pros font leurs sorties à jeun. »</p>
+    <p class="resp">Chez des marcheurs de haut niveau, les séances à jeun intégrées ont donné +5,3 % sur 10 km, contre +6,6 % en mangeant avant chaque séance : pas mieux<sup><a href="#s9">9</a></sup>.</p>
+  </div>
+
+  <div class="arg">
+    <p class="say"><span class="n">5</span>Le jeûne intermittent : environ 2 kg de moins en 8 semaines, sans changer tes indices d'endurance.</p>
+    <p class="proof">Coureurs en 16:8 pendant 8 semaines : -1,92 kg par rapport au groupe témoin, aucun changement des indices d'endurance (économie de course, VO2max, lactate)<sup><a href="#s5">5</a></sup>. Même tableau sur 4 semaines et un 10 km chronométré<sup><a href="#s6">6</a></sup>, et dans une revue de 25 études<sup><a href="#s7">7</a></sup>.</p>
+    <p class="obj">« Plus léger, je monte mieux. »</p>
+    <p class="resp">Possible, mais aucune étude trouvée ne porte sur des traileurs : toutes portent sur des coureurs sur route ou sur piste.</p>
+  </div>
+
+  <div class="arg">
+    <p class="say"><span class="n">6</span>Ma règle : court et tranquille à jeun, OK. Long ou intense, je mange avant.</p>
+    <p class="proof">Aucune différence à jeun sur les efforts courts, avantage à manger sur les longs<sup><a href="#s3">3</a></sup>. Et un manque d'énergie prolongé abîme os, immunité et performance<sup><a href="#s10">10</a></sup>.</p>
+    <p class="obj">« Le jeûne, c'est dangereux pour un sportif. »</p>
+    <p class="resp">Le risque documenté, c'est de manquer d'énergie de façon prolongée ou sévère, pas un footing sans petit-déjeuner<sup><a href="#s10">10</a></sup>.</p>
+  </div>
+
+  <h2>Le script prompteur</h2>
+  <ol class="script">
+    <li>Courir à jeun pour être plus endurant en trail : j'ai regardé les études.<span class="fx">[« à jeun » qui tombe lettre par lettre]</span></li>
+    <li>Le matin, ton foie a perdu environ 40 % de son sucre. Tes muscles, non.<span class="fx">[deux jauges : foie à 60 %, muscles inchangés]</span></li>
+    <li>Donc à jeun, tu brûles plus de graisses, surtout à allure tranquille.<span class="fx">[surligne « graisses »]</span></li>
+    <li>Les « sucres lents » ? Le terme est même jugé faux par l'Afssa.<span class="fx">[« sucres lents » barré, « index glycémique » écrit à la main]</span></li>
+    <li>Plus endurant ? Les études ne le montrent pas.<span class="fx">[cercle sur « pas »]</span></li>
+    <li>Sur les sorties longues, manger avant fait mieux.<span class="fx">[« 46 études » arrive]</span></li>
+    <li>Le jeûne intermittent : environ 2 kg de moins en 8 semaines, sans changer tes indices d'endurance.<span class="fx">[« -2 kg » qui tombe, puis « = endurance »]</span></li>
+    <li>Ma règle : court et tranquille à jeun, OK.<span class="fx">[coche verte]</span></li>
+    <li>Long ou intense : je mange avant. La règle et les sources sont en description.<span class="fx">[deuxième coche]</span></li>
+    <li>Et toi, tu cours à jeun ?</li>
+  </ol>
+
+  <h2>Ce qu'il ne faut pas dire</h2>
+  <ul class="no">
+    <li>« À jeun, on puise dans les sucres lents. »</li>
+    <li>« Le jeûne améliore l'endurance » ou « la performance ».</li>
+    <li>« S'entraîner à jeun apprend durablement au corps à brûler les graisses. »</li>
+    <li>« Pars à jeun pour ta sortie longue. »</li>
+    <li>« Le jeûne intermittent fait fondre la graisse » (l'étude de 8 semaines mesure le poids, pas la graisse).</li>
+    <li>Un nombre de grammes de glucides par heure : non vérifié dans cette recherche.</li>
+    <li>« Le CIO dit que le jeûne est dangereux » : il parle de manque d'énergie prolongé ou sévère.</li>
+  </ul>
+
+  <h2>Sources</h2>
+  <ol class="src">
+    <li id="s1"><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC7696145">Rothschild, Kilding, Plews, « What Should I Eat before Exercise? », Nutrients, 2020</a> <span>Foie ~40 % en moins après une nuit, muscles intacts ; plus de graisses brûlées à jeun ; peu de preuves d'un gain durable.</span></li>
+    <li id="s2"><a href="https://www.anses.fr/fr/system/files/NUT-Ra-Glucides.pdf">Afssa (ANSES), « Glucides et santé », 2004</a> <span>La classification « glucides lents / rapides » est jugée « fausse » ; on parle d'index glycémique.</span></li>
+    <li id="s3"><a href="https://pure.ul.ie/en/publications/effects-of-fasted-vs-fed-state-exercise-on-performance-and-post-e/">Aird, Davies, Carson, méta-analyse, Scand J Med Sci Sports, 2018</a> <span>46 études : manger avant améliore l'effort long, pas de différence sur le court.</span></li>
+    <li id="s4"><a href="https://researchonline.ljmu.ac.uk/id/eprint/8142/">Impey et al., « Fuel for the Work Required », Sports Medicine, 2018</a> <span>S'entraîner avec peu de glucides : marqueurs d'adaptation en hausse, performance meilleure dans 4 études sur 11.</span></li>
+    <li id="s5"><a href="https://pubmed.ncbi.nlm.nih.gov/32796255/">Brady et al., 16:8 chez des coureurs, Med Sci Sports Exerc, 2021</a> <span>-1,92 kg en 8 semaines par rapport au groupe témoin, indices d'endurance inchangés.</span></li>
+    <li id="s6"><a href="https://pubmed.ncbi.nlm.nih.gov/34578819/">Tovar et al., 16/8 chez des coureurs, Nutrients, 2021</a> <span>-0,8 kg de masse grasse en 4 semaines, 10 km chronométré inchangé.</span></li>
+    <li id="s7"><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC10780856/">Conde-Pipó et al., revue systématique, Nutrients, 2024</a> <span>25 études : composition corporelle améliorée, performance maintenue.</span></li>
+    <li id="s8"><a href="https://pubmed.ncbi.nlm.nih.gov/31283627/">Levy et Chu, revue, Curr Sports Med Rep, 2019</a> <span>Aucun bénéfice de performance à jeun ; études surtout pendant le Ramadan.</span></li>
+    <li id="s9"><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC5407976/">Burke et al., J Physiol, 2017</a> <span>Contrepoint : séances à jeun intégrées, pas mieux que manger avant chaque séance (+5,3 % contre +6,6 % sur 10 km).</span></li>
+    <li id="s10"><a href="https://europepmc.org/search?query=DOI:10.1136/bjsports-2023-106994">Mountjoy et al., consensus du CIO sur le RED-S, Br J Sports Med, 2023</a> <span>Contrepoint : un manque d'énergie prolongé abîme os, immunité, augmente les blessures et fait baisser la performance.</span></li>
+  </ol>
+  <p class="note">Le détail, les citations exactes et la table « ce qu'on croit / ce qui est vrai » sont dans RECHERCHE.md, dans le même dossier.</p>
+</main>
+</body>
+</html>
