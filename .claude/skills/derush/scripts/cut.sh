@@ -136,7 +136,7 @@ print(round(total, 3))
 PYEOF
 )
   IDX=$(grep -c "^\[0:v\]trim" "$GRAPH")
-  "$FFMPEG" -nostdin -y -loglevel warning -i "$SRC" -/filter_complex "$GRAPH" \
+  "$FFMPEG" -nostdin -y -loglevel warning -i "$SRC" -filter_complex_script "$GRAPH" \
     -map "[vo]" -map "[ao]" -c:v libx264 -preset fast -crf 18 -pix_fmt yuv420p \
     -c:a aac -b:a 192k -movflags +faststart "$OUTPUT"
   echo "Cut complete: $IDX range(s), ${TOTAL_KEPT}s kept → $OUTPUT"
