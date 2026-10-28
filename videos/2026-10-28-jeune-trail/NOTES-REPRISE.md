@@ -31,18 +31,17 @@ quand STYLE.md sera rempli.
 ```
 Courir à jeun pour être plus endurant en trail : j'ai regardé les études.      [« à jeun » qui tombe lettre par lettre]
 Le matin, après une nuit, ton foie a perdu environ 40 % de son sucre.          [une jauge « foie » qui descend à 60 %, le chiffre arrive]
-Tes muscles, eux, ne sont pas vidés par la nuit.                                [jauge « muscles » qui reste inchangée]
+Tes muscles, eux, ne sont pas concernés par cette vidange.                                [jauge « muscles » qui reste inchangée]
 Donc à jeun, tu brûles plus de graisses, surtout à allure tranquille.           [surligne « graisses »]
 Et les « sucres lents » ? Le terme est même jugé faux par l'Afssa.              [« sucres lents » barré, « index glycémique » s'écrit à la main]
 Est-ce que ça te rend plus endurant ? Les études ne le montrent pas.           [point d'interrogation, puis cercle sur « pas »]
-Sur les sorties longues, c'est même l'inverse : manger avant fait mieux.        [« 46 études » arrive, flèche vers « manger avant »]
+Sur les sorties longues, c'est même l'inverse : manger avant est mieux.        [« 46 études » arrive, flèche vers « manger avant »]
 Le jeûne intermittent ? Environ 2 kg de moins en 8 semaines, sans changer tes indices d'endurance.  [« -2 kg » qui tombe, puis « = endurance »]
 Ma règle : footing court et tranquille à jeun, OK.                              [coche verte]
 Sortie longue ou intense : je mange avant.                                      [deuxième coche, une banane qui apparaît]
 ```
 
-Environ 150 mots dits : compter 60 à 70 s à l'oral, ajouter un exemple personnel pour atteindre 80-90 s.
-
+Je prends systématiquement une ou deux barres avec moi en sortie intermédiaire de 2 heures et j'y touche rarement
 ## Ce que la vidéo promet en caption
 
 « La règle en 2 lignes : quand courir à jeun, quand manger. » L'annoncer face caméra (dernière
